@@ -22,13 +22,13 @@ html {
 body {
   display: flex;
   margin: 0 auto;
+  width: 100%;
   justify-content: center;
-  min-height: 100vh;
   align-items: center;
   background-image: url(../images/background-img.jpg);
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-size:  auto;
+  background-size: 100% 100%;
   background-position: center center;
 }
 
@@ -87,7 +87,6 @@ h5 {
   margin-top: 3.5rem;
   font-size: 1.0rem;
   font-weight: 300;
-
 }
 
 
@@ -117,7 +116,8 @@ a:active {
   text-decoration: none;
   outline: none;
   box-shadow: none;
-  -webkit-tap-highlight-color: transparent; /* removes blue flash on mobile */
+  -webkit-tap-highlight-color: transparent;
+  /* removes blue flash on mobile */
 }
 
 /* sections */
@@ -129,7 +129,6 @@ a:active {
   align-items: center;
   margin: 10px auto;
   min-width: 600px;
-  max-width: 650px;
   background-color: var(--background-color);
   border-radius: 75px;
 
@@ -177,7 +176,7 @@ header {
 
 .navigation-links a {
   background-color: var(--primary-color);
-  padding: 10px 50px;
+  padding: 0.6rem 2.5rem;
   border-radius: 17px;
   margin: 0 5px;
   text-decoration: none;
@@ -194,6 +193,7 @@ header {
   text-decoration: none;
   border: none;
   cursor: pointer;
+  color: var(--accent-color);
 }
 
 /* ============================
@@ -211,11 +211,12 @@ main {
   flex-direction: column;
   margin: 0 auto;
   min-height: 100px;
+  width: 100%;
 }
 
 .home {
-  width: 100%;
   margin: 0 auto;
+
 }
 
 
@@ -230,13 +231,11 @@ main {
 }
 
 .about {
-  width: 100%;
   text-align: center;
   margin: 0;
 }
 
 .faq {
-  width: 100%;
   text-align: center;
 }
 
@@ -288,9 +287,10 @@ section.active {
   transition: opacity 0.9s ease;
 }
 
-.navigation-links a, li,
+.navigation-links a,
+li,
 .social-links a,
-.cta-button  {
+.cta-button {
   transition: 0.3s;
 }
 
@@ -314,25 +314,36 @@ RESPONSIVE MEDIA
 ============================ */
 
 /* For tablets and smaller laptops */
-@media (max-width: 1024px) {
-
-}
+@media (max-width: 1024px) {}
 
 /* For mobile devices */
 @media (max-width: 668px) {
-  .navigation-bar {
+  .content-wrapper {
+    min-width: 480px;
+  }
 
-    
+  .navigation-bar {
+    height: auto;
   }
 
   .navigation-links {
-
-    
+    flex-direction: column;
+    height: auto;
+    align-items: center;
   }
 
   .navigation-links a {
+    display: block;
+    margin: 5px 0;
+    padding: 0.7rem 3rem;
+    width: 150px;
+    text-align: center;
+  }
+
+
+  .navigation-links a {
     padding: 11px 53px;
-    
+
   }
 
   .profile-img {
@@ -353,20 +364,20 @@ RESPONSIVE MEDIA
   }
 }
 
-@media (min-width) {
-
-}
-
 /* For very small phones */
 @media (max-width: 480px) {
+  html {
+    font-size: 13px;
+  }
+
   .content-wrapper {
-    min-width: 448px;
+    min-width: 420px;
   }
 
   .navigation-bar {
     height: auto;
   }
-  
+
   .navigation-links {
     flex-direction: column;
     height: auto;
@@ -380,7 +391,7 @@ RESPONSIVE MEDIA
     width: 150px;
     text-align: center;
   }
-  
+
   .cta-button {
     padding: 0.8rem 3rem;
     font-size: 1rem;
@@ -396,4 +407,30 @@ RESPONSIVE MEDIA
   .social-links i {
     font-size: 1.2rem;
   }
+}
+
+@media (max-width: 440px) {
+  html {
+    font-size: 12px;
+  }
+
+  .navigation-links a {
+    padding: 0.6rem 2.8rem;
+  }
+
+  .social-links a {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .content-wrapper {
+    min-width: 365px;
+  }
+}
+
+@media (max-width:428px) {
+  .content-wrapper {
+    min-width: 340px;
+  }
+
 }
